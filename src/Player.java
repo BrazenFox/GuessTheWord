@@ -33,9 +33,8 @@ public class Player {
     }
 
     public void addToFile() throws IOException {
-
+        File file = new File("C:/Users/DmitryMarokhonov/IdeaProjects/GuessTheWord/src/players.txt");
         try {
-            File file = new File("C:/Users/DmitryMarokhonov/IdeaProjects/GuessTheWord/src/players.txt");
             FileReader fileReader = new FileReader(file);
             BufferedReader reader = new BufferedReader(fileReader);
             String line = reader.readLine();
@@ -60,7 +59,6 @@ public class Player {
             writer.close();
             this.players.clear();
         } catch (IOException e) {
-            File file = new File("C:/Users/DmitryMarokhonov/IdeaProjects/GuessTheWord/src/players.txt");
             FileWriter writer = new FileWriter(file);
             writer.write("NAME:" + this.getName() + "\r" + " word: " + this.getWord() + "; trial: " + this.getTrial() + "\r");
             writer.flush();
