@@ -26,11 +26,15 @@ class Main {
                 System.out.println("Key in one character or your guess word or enter \"end\" to exit the game: ");
                 String str = sc.next();
                 trial += 1;
-                guessWord = word.getEncryptedWord(str);
                 if (str.equals("end")) {
                     win = true;
                     run = false;
                 }
+                if (str.length()>1 && !str.equals(word.getWord())) {
+                    win = true;
+                    System.out.println("You lose(((");
+                }
+                guessWord = word.getEncryptedWord(str);
                 if (guessWord.equals(word.getWord())) {
                     win = true;
                     player.setWord(guessWord);
