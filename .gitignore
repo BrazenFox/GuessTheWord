@@ -4,4 +4,9 @@
      *.iml
      *.class
      *.idea.gitignore
-     *.idea/.gitignore
+     *.idea/.gitignore*.idea/.gitignore 
+*.idea.gitignore 
+*.class 
+*.iml 
+*.xml 
+*.gitignore 
