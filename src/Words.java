@@ -9,7 +9,7 @@ public class Words {
     public Words(String fileName) {
         ArrayList<String> words = new ArrayList<>();
         try {
-            File file = new File("C:/Users/DmitryMarokhonov/IdeaProjects/GuessTheWord/src/" + fileName + ".txt");
+            File file = new File("src/" + fileName + ".txt");
             FileReader fileReader = new FileReader(file);
             BufferedReader reader = new BufferedReader(fileReader);
             String line = reader.readLine();
@@ -45,8 +45,7 @@ public class Words {
                 }
             }
             this.currentStateWord = String.valueOf(word);
-        }
-        else if (inputStr.equals(this.getWord())) {
+        } else if (inputStr.equals(this.getWord())) {
             this.currentStateWord = inputStr;
         }
         return this.getCurrentStateWord();

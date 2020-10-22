@@ -1,12 +1,11 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Player {
-    private String name;
+    private final String name;
     private String word;
     private int trial;
-    ArrayList<String> players = new ArrayList<String>();
+    ArrayList<String> players = new ArrayList<>();
 
     public Player(String name) {
         this.name = name;
@@ -33,7 +32,7 @@ public class Player {
     }
 
     public void addToFile() throws IOException {
-        File file = new File("C:/Users/DmitryMarokhonov/IdeaProjects/GuessTheWord/src/players.txt");
+        File file = new File("src/players.txt");
         try {
             FileReader fileReader = new FileReader(file);
             BufferedReader reader = new BufferedReader(fileReader);
@@ -42,7 +41,7 @@ public class Player {
             while (line != null) {
                 this.players.add(line + "\r");
                 if (line.startsWith("NAME")) {
-                    if (line.split("\\:")[1].equals(this.name)) {
+                    if (line.split(":")[1].equals(this.name)) {
                         check = true;
                         this.players.add(" word: " + this.getWord() + "; trial: " + this.getTrial() + "\r");
                     }
