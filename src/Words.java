@@ -45,7 +45,7 @@ public class Words {
                 }
             }
             this.currentStateWord = String.valueOf(word);
-        } else if (inputStr.equals(this.getWord())) {
+        } else if (this.getWord().equals(inputStr)) {
             this.currentStateWord = inputStr;
         }
         return this.getCurrentStateWord();

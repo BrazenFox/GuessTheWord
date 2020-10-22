@@ -41,7 +41,7 @@ public class Player {
             while (line != null) {
                 this.players.add(line + "\r");
                 if (line.startsWith("NAME")) {
-                    if (line.split(":")[1].equals(this.name)) {
+                    if (this.name.equals(line.split(":")[1])) {
                         check = true;
                         this.players.add(" word: " + this.getWord() + "; trial: " + this.getTrial() + "\r");
                     }
